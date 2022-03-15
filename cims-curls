@@ -1,0 +1,20 @@
+curl --location --request POST 'http://localhost:8080/cims/admin/add-car' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "make" : "maruti",
+    "year" : "3433",
+    "price" : 343.234
+}'
+
+curl --location --request GET 'http://localhost:8080/cims/car/list'
+
+curl --location --request POST 'http://localhost:8080/cims/admin/remove' \
+--header 'Content-Type: application/json' \
+--data-raw '["27f8af20-a122-4a77-afb4-f533e5692df4"]'
+
+curl --location --request POST 'http://localhost:8080/cims/car/buy' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": "aa43eded-07c6-4bf1-bd16-495c7fa0008b",
+    "buyingPrice" : 500
+}'
